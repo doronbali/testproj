@@ -1,14 +1,24 @@
-import React from 'react';
+import React, {useState} from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+
+let data = {
+  balance: -369
+}
+
 function App() {
+  const [balance, setBalance] = useState(data.balance);
+  // setInterval(()=>{
+  //   setBalance(balance + 1);
+  //   console.log(balance);
+  // }, 1000);
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          your balance is { balance }
         </p>
         <a
           className="App-link"
