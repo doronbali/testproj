@@ -6,6 +6,7 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "axios": "^0.19.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-scripts": "3.3.0"
@@ -16,7 +17,10 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "deploy": "aws s3 sync ./build s3://doronbali  --profile user1",
-    "open-deploy": "https://doronbali.s3.us-east-2.amazonaws.com/"
+    "open-deploy": "open https://doronbali.s3.us-east-2.amazonaws.com/",
+    "deploy-lambda": "cd ./src/lambda && zip function.zip index.js",
+    "deploy-lambda2": "cd ./src/lambda && aws lambda create-function --function-name my-function --zip-file fileb://function.zip --handler index.handler --runtime nodejs12.x --role arn:aws:iam::000343622216:role/lambda-cli-role --profile user1"
+
   },
   "eslintConfig": {
     "extends": "react-app"
